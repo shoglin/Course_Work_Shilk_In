@@ -1,0 +1,68 @@
+Removed Pin From Net: NetName=ADC_POT1 Pin=R1-2
+Removed Pin From Net: NetName=ADC_POT2 Pin=R2-2
+Removed Pin From Net: NetName=ADC_POT3 Pin=R3-2
+Removed Pin From Net: NetName=ADC_POT4 Pin=R4-2
+Change component parameters: Designator = "R1" ("R1"); Footprint = "0603R"; UniqueID = "\CVSSOSUB" ("\CVSSOSUB")
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Resistor_10k_1_0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10 ê"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2" ("R2"); Footprint = "0603R"; UniqueID = "\TLLPQPNB" ("\TLLPQPNB")
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Resistor_10k_1_0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10 ê"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3" ("R3"); Footprint = "0603R"; UniqueID = "\XOADBOFM" ("\XOADBOFM")
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Resistor_10k_1_0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10 ê"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4" ("R4"); Footprint = "0603R"; UniqueID = "\RLFHXRSA" ("\RLFHXRSA")
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Resistor_10k_1_0603"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10 ê"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=ADC_POT1 Pin=C3-2
+Added Pin To Net: NetName=ADC_POT2 Pin=C4-2
+Added Pin To Net: NetName=ADC_POT3 Pin=C5-2
+Added Pin To Net: NetName=ADC_POT4 Pin=C6-2
+Added Pin To Net: NetName=ADC_POT4 Pin=R1-2
+Added Pin To Net: NetName=ADC_POT1 Pin=R2-2
+Added Pin To Net: NetName=ADC_POT2 Pin=R3-2
+Added Pin To Net: NetName=ADC_POT3 Pin=R4-2
+Added Pin To Net: NetName=NetR1_1 Pin=R1-1
+Added Pin To Net: NetName=NetR1_1 Pin=XP7-2
+Added Net: Name=NetR1_1
+Added Pin To Net: NetName=NetR2_1 Pin=R2-1
+Added Pin To Net: NetName=NetR2_1 Pin=XP4-2
+Added Net: Name=NetR2_1
+Added Pin To Net: NetName=NetR3_1 Pin=R3-1
+Added Pin To Net: NetName=NetR3_1 Pin=XP5-2
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetR4_1 Pin=R4-1
+Added Pin To Net: NetName=NetR4_1 Pin=XP6-2
+Added Net: Name=NetR4_1

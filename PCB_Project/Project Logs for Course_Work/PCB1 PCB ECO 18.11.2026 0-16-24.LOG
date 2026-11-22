@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=DRV2_DIR3 Pin=DD6-12
+Removed Pin From Net: NetName=DRV2_PWM3 Pin=DD6-13
+Added Pin To Net: NetName=DRV2_PWM3 Pin=DD6-12
+Added Pin To Net: NetName=DRV2_DIR3 Pin=DD6-13

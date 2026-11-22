@@ -1,0 +1,29 @@
+Added Component: Designator=C25(0603C)
+Add component (AddParameter): Name = "Capacity (nF)"; Value = "10000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet"; Value = "https://static.chipdip.ru/lib/893/DOC031893419.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "Capacitor_10u_10_10V_X7R_0603C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10 לך"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage (V)"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ְגעמנ"; Value = "glebmih"; VariantName = "[No Variations]"
+Add component: Footprint Not Found 0603C
+Add component: Footprint Not Found 0603C
+Added Pin To Net: NetName=GND_ISO Pin=C25-1
+Added Pin To Net: NetName=NetC25_2 Pin=C25-2
+Add Pin To Net: Unknown Pin: Pin C52-1
+Add Pin To Net: Unknown Pin: Pin C52-2
+Add Pin To Net: Unknown Pin: Pin C55-1
+Add Pin To Net: Unknown Pin: Pin C55-2
+Add Pin To Net: Unknown Pin: Pin DD2-45
+Add Pin To Net: Unknown Pin: Pin DD3-45
+Add Pin To Net: Unknown Pin: Pin XP5-1
+Add Pin To Net: Unknown Pin: Pin XP5-2
+Added Member To Class: ClassName=Sheet1 Member=Component C25 Capacitor
+Add Class Member: Failed to add class member : Component C52 Capacitor
+Add Class Member: Failed to add class member : Component C55 Capacitor

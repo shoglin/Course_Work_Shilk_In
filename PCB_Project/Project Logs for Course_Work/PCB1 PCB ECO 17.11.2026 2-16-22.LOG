@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=M1_OUT_- Pin=XP8-1
+Removed Pin From Net: NetName=M1_OUT_+ Pin=XP8-2
+Added Pin To Net: NetName=M1_OUT_+ Pin=XP8-1
+Added Pin To Net: NetName=M1_OUT_- Pin=XP8-2

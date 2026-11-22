@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=NetDD1_12 Pin=R5-1
+Removed Pin From Net: NetName=NetDD1_11 Pin=R5-2
+Removed Pin From Net: NetName=NetDD1_11 Pin=XP2-1
+Removed Pin From Net: NetName=NetDD1_12 Pin=XP2-2
+Added Pin To Net: NetName=NetDD1_11 Pin=R5-1
+Added Pin To Net: NetName=NetDD1_12 Pin=R5-2
+Added Pin To Net: NetName=NetDD1_12 Pin=XP2-1
+Added Pin To Net: NetName=NetDD1_11 Pin=XP2-2
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3
+Added Rule: Name=Schematic Supply Nets_4
+Added Rule: Name=Schematic Supply Nets_5
+Added Rule: Name=Schematic Supply Nets_6
+Added Rule: Name=Schematic Supply Nets_7
+Added Rule: Name=Schematic Supply Nets_8
+Added Rule: Name=Schematic Supply Nets_9

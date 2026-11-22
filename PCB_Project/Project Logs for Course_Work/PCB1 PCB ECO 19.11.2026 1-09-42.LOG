@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=MCU_PWM_M3 Pin=DD6-2
+Removed Pin From Net: NetName=MCU_DIR_M3 Pin=DD6-3
+Removed Pin From Net: NetName=MCU_PWM_M4 Pin=DD6-4
+Removed Pin From Net: NetName=MCU_DIR_M4 Pin=DD6-5
+Added Pin To Net: NetName=MCU_DIR_M4 Pin=DD6-2
+Added Pin To Net: NetName=MCU_PWM_M4 Pin=DD6-3
+Added Pin To Net: NetName=MCU_DIR_M3 Pin=DD6-4
+Added Pin To Net: NetName=MCU_PWM_M3 Pin=DD6-5
+Change Net Name : Old Net Name=NetDD1_11 New Net Name=RS_P
+Change Net Name : Old Net Name=NetDD1_12 New Net Name=RS_N
+Added Differential Pair: Name=RS
+Added Member To Class: ClassName=Sheet1 Member=Component C31 Capacitor

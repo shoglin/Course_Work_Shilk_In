@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=M2_OUT_+ Pin=XP9-1
+Removed Pin From Net: NetName=M2_OUT_- Pin=XP9-2
+Added Pin To Net: NetName=M2_OUT_- Pin=XP9-1
+Added Pin To Net: NetName=M2_OUT_+ Pin=XP9-2
+Change Net Name : Old Net Name=M2_OUT_+ New Net Name=M2_OUT_-
+Change Net Name : Old Net Name=M2_OUT_- New Net Name=M2_OUT_+

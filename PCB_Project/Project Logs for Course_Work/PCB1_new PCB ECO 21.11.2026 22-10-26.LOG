@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=LED_OK Pin=DD2-7
+Removed Pin From Net: NetName=LED_ERROR Pin=DD2-8
+Added Pin To Net: NetName=LED_OK Pin=DD2-38
+Added Pin To Net: NetName=LED_ERROR Pin=DD2-39

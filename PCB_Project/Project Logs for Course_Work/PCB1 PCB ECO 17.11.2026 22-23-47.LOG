@@ -1,0 +1,45 @@
+Change component parameters: Designator = "C10" ("C10"); Footprint = "TC_A"; UniqueID = "\XOQVRFMH" ("\XOQVRFMH")
+Change component parameters (AddParameter): Name = "Capacity (uF)"; Value = "22"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Capacitor_22u_10_50V_TC_A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "0,1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Tantalum"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "22 לך"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage (V)"; Value = "50"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C50" ("C50"); Footprint = "TC_A"; UniqueID = "\XHNKPBRJ" ("\XHNKPBRJ")
+Change component parameters (AddParameter): Name = "Capacity (uF)"; Value = "22"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Capacitor_22u_10_50V_TC_A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "0,1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Tantalum"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "22 לך"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage (V)"; Value = "50"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C58" ("C58"); Footprint = "TC_A"; UniqueID = "\DDJJFWOP" ("\DDJJFWOP")
+Change component parameters (AddParameter): Name = "Capacity (uF)"; Value = "22"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufactore"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Notice"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "Capacitor_22u_10_50V_TC_A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rate"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Shop"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "0,1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Tantalum"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "22 לך"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage (V)"; Value = "50"; VariantName = "[No Variations]"
+Change Net Color : Old Net Color=RGB(158, 161, 117) New Net Color=Default
+Change Net Color : Old Net Color=RGB(92, 212, 129) New Net Color=Default
+Change Net Color : Old Net Color=Lime New Net Color=Default
+Change Net Color : Old Net Color=RGB(210, 162, 205) New Net Color=Default
+Change Net Color : Old Net Color=Fuchsia New Net Color=Default
+Change Net Color : Old Net Color=Blue New Net Color=Default

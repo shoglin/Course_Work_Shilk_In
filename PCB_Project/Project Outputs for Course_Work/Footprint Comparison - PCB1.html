@@ -1,0 +1,868 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Footprint Comparison Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD25\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Footprint Comparison Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">18.11.2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22:45:17</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\user\Desktop\Altium_Prjs\Course_Work\PCB_Project\PCB1.PcbDoc" class="file"><acronym title="C:\Users\user\Desktop\Altium_Prjs\Course_Work\PCB_Project\PCB1.PcbDoc">C:\Users\user\Desktop\Altium_Prjs\Course_Work\PCB_Project\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table><a name="ID31S4D5WGK20YKPEV4PQCFJ5CNPDR3IWBOANPYIJQMTPOZ3QYBETK"><h2>Contents</h2></a><p class="contents_level1"><a href="#ID31S4D5WGK20YKPEV4PQCFJ5CNPDR3IWBOANPYIJQMTPOZ3QYBETK">Contents</a></p>
+<p class="contents_level1"><a href="#ID2ER5LVIGRJKWEEJTNQQBEYCRZFTQCZ5TSCMB4XI1YJMUTP53IS4M">Components Status Summary</a></p>
+<p class="contents_level2"><a href="#ID5WOJZHSB14PGFURL1BX1OHLMPMSCWCJCPDT5MDJLVB2U2LAT0JUD">Matched Components List<br></a></p><br><a name="ID2ER5LVIGRJKWEEJTNQQBEYCRZFTQCZ5TSCMB4XI1YJMUTP53IS4M"><h2>Components Status Summary</h2></a><h2>Matched Components List</h2><a name="ID5WOJZHSB14PGFURL1BX1OHLMPMSCWCJCPDT5MDJLVB2U2LAT0JUD"><table>
+<tr>
+<th class="column1">Designator</th>
+<th class="column2">Footprint</th>
+<th class="column3">Footprint reference</th>
+<th class="column4">Footprint to reference Library</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C1</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C2</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C3</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C4</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C5</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C6</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C7</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C8</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C9</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C10</td>
+<td style="Width:20%" class="column2">TC_A</td>
+<td style="Width:20%" class="column3">TC_A</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydrolib\Hydrolib.DbLib/Capacitors_electrolytic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C11</td>
+<td style="Width:20%" class="column2">1206C</td>
+<td style="Width:20%" class="column3">1206C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C12</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C13</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C14</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C15</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C16</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C17</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C18</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C19</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C20</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C21</td>
+<td style="Width:20%" class="column2">1206C</td>
+<td style="Width:20%" class="column3">1206C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C22</td>
+<td style="Width:20%" class="column2">1206C</td>
+<td style="Width:20%" class="column3">1206C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C23</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C24</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C25</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C26</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C27</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C28</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C29</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C30</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C31</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C32</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C33</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C34</td>
+<td style="Width:20%" class="column2">1206C</td>
+<td style="Width:20%" class="column3">1206C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C35</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C36</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C37</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C38</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C39</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C40</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C41</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C42</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C43</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C44</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C45</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C46</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C47</td>
+<td style="Width:20%" class="column2">1206C</td>
+<td style="Width:20%" class="column3">1206C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C48</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C49</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C50</td>
+<td style="Width:20%" class="column2">TC_A</td>
+<td style="Width:20%" class="column3">TC_A</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydrolib\Hydrolib.DbLib/Capacitors_electrolytic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C51</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C52</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C53</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C54</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C55</td>
+<td style="Width:20%" class="column2">1206C</td>
+<td style="Width:20%" class="column3">1206C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C56</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C57</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C58</td>
+<td style="Width:20%" class="column2">TC_A</td>
+<td style="Width:20%" class="column3">TC_A</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydrolib\Hydrolib.DbLib/Capacitors_electrolytic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C59</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C60</td>
+<td style="Width:20%" class="column2">0603C</td>
+<td style="Width:20%" class="column3">0603C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C61</td>
+<td style="Width:20%" class="column2">0402C</td>
+<td style="Width:20%" class="column3">0402C</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Capacitors_ceramic$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D1</td>
+<td style="Width:20%" class="column2">SOT223</td>
+<td style="Width:20%" class="column3">SOT223</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">DA1</td>
+<td style="Width:20%" class="column2">CONV_TME_2405S</td>
+<td style="Width:20%" class="column3">CONV_TME_2405S</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">DA2</td>
+<td style="Width:20%" class="column2">SOT23-3</td>
+<td style="Width:20%" class="column3">SOT23-3</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">DA3</td>
+<td style="Width:20%" class="column2">SOT23-5</td>
+<td style="Width:20%" class="column3">SOT23-5</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">DD1</td>
+<td style="Width:20%" class="column2">SOIC-16W</td>
+<td style="Width:20%" class="column3">SOIC-16W</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">DD2</td>
+<td style="Width:20%" class="column2">LQFP100</td>
+<td style="Width:20%" class="column3">LQFP100</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">DD3</td>
+<td style="Width:20%" class="column2">SOIC-16</td>
+<td style="Width:20%" class="column3">SOIC-16</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">DD4</td>
+<td style="Width:20%" class="column2">HTSSOP44-DDW_TEX</td>
+<td style="Width:20%" class="column3">HTSSOP44-DDW_TEX</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">DD5</td>
+<td style="Width:20%" class="column2">HTSSOP44-DDW_TEX</td>
+<td style="Width:20%" class="column3">HTSSOP44-DDW_TEX</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">DD6</td>
+<td style="Width:20%" class="column2">SOIC-16</td>
+<td style="Width:20%" class="column3">SOIC-16</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Chips$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">FB1</td>
+<td style="Width:20%" class="column2">0603L</td>
+<td style="Width:20%" class="column3">0603L</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Inductance$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">HL1</td>
+<td style="Width:20%" class="column2">0603D_red</td>
+<td style="Width:20%" class="column3">0603D_red</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Other$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">HL2</td>
+<td style="Width:20%" class="column2">0603D_green</td>
+<td style="Width:20%" class="column3">0603D_green</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Other$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R1</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R2</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R3</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R4</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R5</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R6</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R7</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R8</td>
+<td style="Width:20%" class="column2">0805R</td>
+<td style="Width:20%" class="column3">0805R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R9</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R10</td>
+<td style="Width:20%" class="column2">0805R</td>
+<td style="Width:20%" class="column3">0805R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R11</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R12</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R13</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R14</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R15</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R16</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R17</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R18</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R19</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R20</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R21</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R22</td>
+<td style="Width:20%" class="column2">0603R</td>
+<td style="Width:20%" class="column3">0603R</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Resistors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">S1</td>
+<td style="Width:20%" class="column2">TSS-TD-19XA-XTR</td>
+<td style="Width:20%" class="column3">TSS-TD-19XA-XTR</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Other$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">VD1</td>
+<td style="Width:20%" class="column2">SMC</td>
+<td style="Width:20%" class="column3">SMC</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/TVS$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">XP1</td>
+<td style="Width:20%" class="column2">XT30UPB-M</td>
+<td style="Width:20%" class="column3">XT30UPB-M</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">XP2</td>
+<td style="Width:20%" class="column2">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:20%" class="column3">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">XP3</td>
+<td style="Width:20%" class="column2">3M_30320-6002HB</td>
+<td style="Width:20%" class="column3">3M_30320-6002HB</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">XP4</td>
+<td style="Width:20%" class="column2">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:20%" class="column3">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">XP5</td>
+<td style="Width:20%" class="column2">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:20%" class="column3">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">XP6</td>
+<td style="Width:20%" class="column2">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:20%" class="column3">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">XP7</td>
+<td style="Width:20%" class="column2">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:20%" class="column3">JST_B3B-PH-K-S(LF)(SN)</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">XP8</td>
+<td style="Width:20%" class="column2">B2P-VH</td>
+<td style="Width:20%" class="column3">B2P-VH</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">XP9</td>
+<td style="Width:20%" class="column2">B2P-VH</td>
+<td style="Width:20%" class="column3">B2P-VH</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">XP10</td>
+<td style="Width:20%" class="column2">B2P-VH</td>
+<td style="Width:20%" class="column3">B2P-VH</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">XP11</td>
+<td style="Width:20%" class="column2">B2P-VH</td>
+<td style="Width:20%" class="column3">B2P-VH</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Connectors$</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">ZQ1</td>
+<td style="Width:20%" class="column2">QSMD3.2x2.5</td>
+<td style="Width:20%" class="column3">QSMD3.2x2.5</td>
+<td style="Width:60%" class="column4">C:\Users\user\Desktop\Altium_Prjs\Hydro_Library_CW\Hydro_Library_CW.DbLib/Other$</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

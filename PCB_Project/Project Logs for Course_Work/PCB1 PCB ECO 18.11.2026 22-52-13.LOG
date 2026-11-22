@@ -1,0 +1,4 @@
+Removed Member From Class: ClassName=Sheet1 Member=C10
+Removed Member From Class: ClassName=Drivers Member=C58
+Added Member To Class: ClassName=Drivers Member=Component C10 Capacitor
+Added Member To Class: ClassName=Sheet1 Member=Component C58 Capacitor

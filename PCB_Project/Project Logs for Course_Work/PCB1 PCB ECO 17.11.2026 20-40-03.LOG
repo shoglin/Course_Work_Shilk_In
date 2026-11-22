@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetDD4_42 Pin=R14-1
+Removed Pin From Net: NetName=+24Â Pin=R14-2
+Added Pin To Net: NetName=+24Â Pin=R14-1
+Added Pin To Net: NetName=NetDD4_42 Pin=R14-2
+Change Net Color : Old Net Color=RGB(255, 197, 26) New Net Color=Default
+Change Net Color : Old Net Color=RGB(158, 161, 117) New Net Color=Default
+Change Net Color : Old Net Color=RGB(253, 131, 0) New Net Color=Default
+Change Net Color : Old Net Color=RGB(188, 57, 255) New Net Color=Default
+Change Net Color : Old Net Color=RGB(210, 162, 205) New Net Color=Default
+Change Net Color : Old Net Color=RGB(158, 161, 117) New Net Color=Default
+Change Net Color : Old Net Color=RGB(145, 141, 144) New Net Color=Default
