@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=RS485_DIR Pin=DD2-67
+Removed Pin From Net: NetName=UART_TX Pin=DD2-68
+Removed Pin From Net: NetName=UART_RX Pin=DD2-69
+Added Pin To Net: NetName=UART_TX Pin=DD2-78
+Added Pin To Net: NetName=UART_RX Pin=DD2-79
+Added Pin To Net: NetName=RS485_DIR Pin=DD2-80
+Change Class Name : Old Net Name=Sheet1 New Net Name=Interfaces
+Added Member To Class: ClassName=Interfaces Member=Component XP7 JST PH-3
